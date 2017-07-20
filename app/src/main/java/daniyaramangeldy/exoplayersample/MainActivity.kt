@@ -4,6 +4,7 @@ import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.widget.Toast
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
@@ -23,6 +24,7 @@ import com.google.android.exoplayer2.upstream.cache.CacheDataSourceFactory
 import com.google.android.exoplayer2.upstream.cache.LeastRecentlyUsedCacheEvictor
 import com.google.android.exoplayer2.upstream.cache.SimpleCache
 import com.google.android.exoplayer2.util.Util
+import daniyaramangeldy.exoplayersample.R.id.playerView
 
 
 class MainActivity : AppCompatActivity() {
@@ -47,6 +49,8 @@ class MainActivity : AppCompatActivity() {
         playerView.player = player
         player.playWhenReady = true
 
+
+        Toast.makeText(this, "Toast", Toast.LENGTH_SHORT).show()
 
     }
 }
