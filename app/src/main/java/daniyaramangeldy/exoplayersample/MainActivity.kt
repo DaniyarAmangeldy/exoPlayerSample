@@ -26,6 +26,7 @@ import com.google.android.exoplayer2.util.Util
 import daniyaramangeldy.exoplayersample.R.id.playerView
 
 
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         player.prepare(videoSource)
         playerView.player = player
         player.playWhenReady = true
-
 
     }
 }
