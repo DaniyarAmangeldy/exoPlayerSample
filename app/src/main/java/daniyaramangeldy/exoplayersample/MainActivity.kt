@@ -30,17 +30,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val mp3Uri: Uri = Uri.Builder().appendEncodedPath("http://e-cdn-preview-5.deezer.com/stream/51afcde9f56a132096c0496cc95eb24b-4.mp3").build()
-        val mainHandler = Handler()
         val bandwidthMeter = DefaultBandwidthMeter()
         val dataSourceFactory = DefaultDataSourceFactory(applicationContext,
                 Util.getUserAgent(applicationContext, "yourApplicationName"), bandwidthMeter)
         val extractorsFactory = DefaultExtractorsFactory()
-        val cache: SimpleCache = SimpleCache(applicationContext.externalCacheDir,LeastRecentlyUsedCacheEvictor(1024000))
+        val cache: SimpleCache = SimpleCache(applicationContext.externalCacheDir,LeastRecentlyUsedCacheEvictor(1024*1024*10))
         val cacheSourceFactory = CacheDataSourceFactory(cache,dataSourceFactory)
         val videoTrackSelectionFactory = AdaptiveTrackSelection.Factory(bandwidthMeter)
         val trackSelector = DefaultTrackSelector(videoTrackSelectionFactory)
-        val videoSource = ExtractorMediaSource(Uri.parse("http://e-cdn-preview-5.deezer.com/stream/51afcde9f56a132096c0496cc95eb24b-4.mp3"),
+        val videoSource = ExtractorMediaSource(Uri.parse("http://138.68.64.233:3000/1.mp3"),
                 cacheSourceFactory, extractorsFactory, null, null)
         val player = ExoPlayerFactory.newSimpleInstance(applicationContext, trackSelector)
         player.prepare(videoSource)
