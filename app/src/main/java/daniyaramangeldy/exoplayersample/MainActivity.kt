@@ -23,6 +23,8 @@ import com.google.android.exoplayer2.upstream.cache.CacheDataSourceFactory
 import com.google.android.exoplayer2.upstream.cache.LeastRecentlyUsedCacheEvictor
 import com.google.android.exoplayer2.upstream.cache.SimpleCache
 import com.google.android.exoplayer2.util.Util
+import daniyaramangeldy.exoplayersample.R.id.playerView
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -44,7 +46,6 @@ class MainActivity : AppCompatActivity() {
         player.prepare(videoSource)
         playerView.player = player
         player.playWhenReady = true
-
 
     }
 }
