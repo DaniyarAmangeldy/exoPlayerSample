@@ -27,6 +27,8 @@ import com.google.android.exoplayer2.util.Util
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var player:SimpleExoPlayer;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,11 +44,16 @@ class MainActivity : AppCompatActivity() {
         val trackSelector = DefaultTrackSelector(videoTrackSelectionFactory)
         val videoSource = ExtractorMediaSource(Uri.parse("http://e-cdn-preview-5.deezer.com/stream/51afcde9f56a132096c0496cc95eb24b-4.mp3"),
                 cacheSourceFactory, extractorsFactory, null, null)
-        val player = ExoPlayerFactory.newSimpleInstance(applicationContext, trackSelector)
+        player = ExoPlayerFactory.newSimpleInstance(applicationContext, trackSelector)
         player.prepare(videoSource)
         playerView.player = player
         player.playWhenReady = true
 
 
+    }
+
+    override fun onStop() {
+        super.onStop()
+        player.release()
     }
 }
