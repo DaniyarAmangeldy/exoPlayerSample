@@ -23,3 +23,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-dontwarn com.tbruyelle.rxpermissions.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+-dontwarn javax.annotation.Nullable
+-dontwarn javax.annotation.ParametersAreNonnullByDefault
