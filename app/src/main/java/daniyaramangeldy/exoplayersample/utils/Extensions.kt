@@ -1,5 +1,8 @@
 package daniyaramangeldy.exoplayersample.utils
 
+import android.content.Context
+import android.support.v4.content.ContextCompat
+
 /**
  * Utils класс тут
  */
@@ -7,4 +10,7 @@ package daniyaramangeldy.exoplayersample.utils
 
 
 
+fun Context.getDrawable(id: Int){
+    ContextCompat.getDrawable(this,id)
+}
 

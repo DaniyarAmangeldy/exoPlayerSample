@@ -1,5 +1,7 @@
 package daniyaramangeldy.exoplayersample.di.application
 
+import android.content.Context
+import cafe.adriel.androidaudioconverter.AndroidAudioConverter
 import dagger.Module
 import dagger.Provides
 import daniyaramangeldy.exoplayersample.application.App
@@ -15,6 +17,8 @@ class AppModule(val app: App) {
 
     @Provides
     @Singleton
-    fun provideContext() = app.applicationContext
+    fun provideContext(): Context {
+        return app.applicationContext
+    }
 
 }

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">exoPlayerSample</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="anim.stop" translatable="false">stop</string>
+    <string name="anim.record" translatable="false">record</string>
 </resources>

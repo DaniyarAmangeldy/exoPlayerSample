@@ -2,6 +2,7 @@ package daniyaramangeldy.exoplayersample.di.microphone
 
 import dagger.Module
 import dagger.Provides
+import daniyaramangeldy.exoplayersample.business.microphone.MicrophoneInteractor
 import daniyaramangeldy.exoplayersample.business.microphone.MicrophoneInteractorImpl
 import daniyaramangeldy.exoplayersample.data.repository.microphone.MicrophoneRepository
 import daniyaramangeldy.exoplayersample.data.repository.microphone.MicrophoneRepositoryImpl
@@ -12,11 +13,15 @@ class MicrophoneModule {
 
     @Provides
     @MicrophoneScope
-    fun provideMicrophoneInteractor(microphoneRepository: MicrophoneRepository) = MicrophoneInteractorImpl(microphoneRepository)
+    fun provideMicrophoneInteractor(microphoneRepository: MicrophoneRepository): MicrophoneInteractor {
+        return MicrophoneInteractorImpl(microphoneRepository)
+    }
 
 
     @Provides
     @MicrophoneScope
-    fun provideMicrophoneRepository(api: API) = MicrophoneRepositoryImpl(api)
+    fun provideMicrophoneRepository(api: API): MicrophoneRepository {
+        return MicrophoneRepositoryImpl(api)
+    }
 
 }

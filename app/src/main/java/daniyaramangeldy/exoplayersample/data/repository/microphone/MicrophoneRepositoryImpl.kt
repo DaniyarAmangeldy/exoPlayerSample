@@ -1,12 +1,13 @@
 package daniyaramangeldy.exoplayersample.data.repository.microphone
 
 import daniyaramangeldy.exoplayersample.data.source.network.API
+import daniyaramangeldy.exoplayersample.di.microphone.MicrophoneScope
 import javax.inject.Inject
 
 /**
  * Created by marsstudio on 28.07.17.
  */
-
-class MicrophoneRepositoryImpl @Inject constructor(api: API) : MicrophoneRepository {
+@MicrophoneScope
+class MicrophoneRepositoryImpl @Inject constructor(val api: API) : MicrophoneRepository {
 
 }
